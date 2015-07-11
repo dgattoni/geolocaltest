@@ -1,0 +1,60 @@
+<%= form_for(@party) do |f| %>
+  <% if @party.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@party.errors.count, "error") %> prohibited this party from being saved:</h2>
+
+      <ul>
+      <% @party.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :starts_at %><br>
+    <%= f.datetime_select :starts_at %>
+  </div>
+  <div class="field">
+    <%= f.label :openbar %><br>
+    <%= f.check_box :openbar %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :dress_code %><br>
+    <%= f.text_field :dress_code %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :disco_tweet %><br>
+    <%= f.text_field :disco_tweet %>
+  </div>
+
+   <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
